@@ -10,6 +10,34 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'import/extensions': [
+      'error',
+      'always',
+      {
+        js: 'never',
+        vue: 'never'
+      }
+    ],
+    'import/prefer-default-export': [
+      'never',
+      {}
+    ],
+    'vue/html-quotes': [
+      'error',
+      'double'
+    ],
+    'object-curly-newline': [
+      'error',
+      {
+        'consistent': true
+      }
+    ],
+    'no-param-reassign': ['error', {
+      props: true,
+      ignorePropertyModificationsFor: [
+        'state',
+      ]
+    }],
   },
   parserOptions: {
     parser: 'babel-eslint',
