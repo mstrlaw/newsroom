@@ -3,11 +3,20 @@
     v-if="title.length > 0"
     :position="position"
     :rotation="rotation"
+    shadow="receive: true"
   >
     <a-entity
       geometry="primitive: box; width: 5.25; depth: .1; height: 2.33"
-      material="color: #0E0E0E"
+      material="color: #0E0E0E; metalness:0.5; roughness: 0.8;"
       position="0 0 -.055"
+      shadow="receive: true"
+      sound="
+          src: url(/audio/tv_emf_static.mp3);
+          autoplay: true;
+          loop: true;
+          refDistance: .5;
+          rolloffFactor: .5;
+        "
     />
     <a-entity
       :geometry="screenGeometry"
@@ -18,8 +27,19 @@
       :position="textPositioning"
       :value="title"
       :wrap-count="wrapCount"
-      color="green"
+      color="#1B03A3"
       baseline="top"
+    />
+    <a-entity
+      light="
+        type: spot;
+        angle: 100;
+        distance: 10;
+        color: #87CEEB;
+        penumbra: 2;
+      "
+      position="0 0 0.4"
+      :rotation="lightRotation"
     />
   </a-entity>
 </template>
@@ -78,6 +98,14 @@ export default {
     },
     textPositioning() {
       return this.textPosition.join(' ');
+    },
+    lightRotation() {
+      const rotation = [
+        this.rotation[0],
+        180,
+        0,
+      ];
+      return rotation.join(' ');
     },
   },
   mounted() {

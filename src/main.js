@@ -12,6 +12,8 @@ import store from './store';
 
 Vue.config.productionTip = false;
 
+require('aframe-physics-system');
+
 Vue.config.ignoredElements = [
   'a-animation',
   'a-scene',
