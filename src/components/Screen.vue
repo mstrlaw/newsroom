@@ -5,15 +5,20 @@
     :rotation="rotation"
   >
     <a-entity
+      geometry="primitive: box; width: 5.25; depth: .1; height: 2.33"
+      material="color: #0E0E0E"
+      position="0 0 -.055"
+    />
+    <a-entity
       :geometry="screenGeometry"
-      material="color: #121010"
+      material="color: #0E0E0E"
       position="0 0 -.04"
     />
     <a-text
       :position="textPositioning"
       :value="title"
       :wrap-count="wrapCount"
-      color="darkgreen"
+      color="green"
       baseline="top"
     />
   </a-entity>
@@ -21,10 +26,9 @@
 
 <script>
 import 'aframe';
-// import TextElement from '@/components/TextElement';
 
 export default {
-  name: 'Card',
+  name: 'Screen',
   props: {
     index: {
       type: Number,
@@ -56,7 +60,7 @@ export default {
     geometryData: [
       ['primitive', 'box'],
       ['width', '5.2'],
-      ['depth', '.05'],
+      ['depth', '.001'],
     ],
   }),
   computed: {

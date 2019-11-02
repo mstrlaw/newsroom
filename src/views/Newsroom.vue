@@ -1,6 +1,6 @@
 <template>
   <a-entity>
-    <Card
+    <Screen
       v-for="(cluster, index) in clusters"
       :key="index"
       :index="index"
@@ -11,11 +11,14 @@
 
 <script>
 // @ is an alias to /src
-import Card from '@/components/Card';
+import Screen from '@/components/Screen';
 import { debounce } from '@/utilities';
 
 export default {
   name: 'home',
+  components: {
+    Screen,
+  },
   data: () => ({
     baseWidth: 5.2,
     textPosition: [-2.5, 0, 0],
@@ -26,160 +29,157 @@ export default {
     ],
     clusters: [
       {
-        // title: '[0,1]',
-        title: '',
+        title: '[SCREEN 0,1 - OFF]',
+        // title: 'OFF',
         position: '0 7.0 -8',
         rotation: '0 0 0',
       },
       {
-        // title: '[0,0]',
-        title: '',
+        title: '[SCREEN 0,0 - OFF]',
+        // title: 'OFF',
         position: '0 4.2 -8',
         rotation: '0 0 0',
       },
       {
-        // title: '[0,-1]',
-        title: '',
+        title: '[SCREEN 0,-1 - OFF]',
+        // title: 'OFF',
         position: '0 1.6 -8',
         rotation: '-10 0 0',
       },
       {
-        // title: '[-1,0]',
-        title: '',
+        title: '[SCREEN -1,0 - OFF]',
+        // title: 'OFF',
         position: '-5.305 4.2 -6.842',
         rotation: '0 25 0',
       },
       {
-        // title: '[1,0]',
-        title: '',
+        title: '[SCREEN 1,0 - OFF]',
+        // title: 'OFF',
         position: '5.253 4.2 -6.905',
         rotation: '0 -25 0',
       },
       {
-        // title: '[-1,1]',
-        title: '',
+        title: '[SCREEN -1,1 - OFF]',
+        // title: 'OFF',
         position: '-5.305 7.0 -6.842',
         rotation: '0 25 0',
       },
       {
-        // title: '[1,1]',
-        title: '',
+        title: '[SCREEN 1,1 - OFF]',
+        // title: 'OFF',
         position: '5.253 7.0 -6.905',
         rotation: '0 -25 0',
       },
       {
-        // title: '[-1,-1]',
-        title: '',
+        title: '[SCREEN -1,-1 - OFF]',
+        // title: 'OFF',
         position: '-5.305 1.6 -6.842',
         rotation: '-15 25 0',
       },
       {
-        // title: '[1,-1]',
-        title: '',
+        title: '[SCREEN 1,-1 - OFF]',
+        // title: 'OFF',
         position: '5.253 1.6 -6.905',
         rotation: '-15 -25 0',
       },
       {
-        // title: '[0,2]',
-        title: '',
+        title: '[SCREEN 0,2 - OFF]',
+        // title: 'OFF',
         position: '0 9.5 -8',
         rotation: '0 0 0',
       },
       {
-        // title: '[-1,2]',
-        title: '',
+        title: '[SCREEN -1,2 - OFF]',
+        // title: 'OFF',
         position: '-5.305 9.5 -6.842',
         rotation: '0 25 0',
       },
       {
-        // title: '[1,2]',
-        title: '',
+        title: '[SCREEN 1,2 - OFF]',
+        // title: 'OFF',
         position: '5.253 9.5 -6.905',
         rotation: '0 -25 0',
       },
       {
-        // title: '[0,3]',
-        title: '',
+        title: '[SCREEN 0,3 - OFF]',
+        // title: 'OFF',
         position: '0 12 -8',
         rotation: '10 0 0',
       },
       {
-        // title: '[-1,3]',
-        title: '',
+        title: '[SCREEN -1,3 - OFF]',
+        // title: 'OFF',
         position: '-5.305 12 -6.842',
         rotation: '10 25 0',
       },
       {
-        // title: '[1,3]',
-        title: '',
+        title: '[SCREEN 1,3 - OFF]',
+        // title: 'OFF',
         position: '5.253 12 -6.905',
         rotation: '10 -25 0',
       },
       {
-        // title: '[-2,1]',
-        title: '',
+        title: '[SCREEN -2,1 - OFF]',
+        // title: 'OFF',
         position: '-9.517 7.0 -3.579',
         rotation: '0 50 0',
       },
       {
-        // title: '[2,1]',
-        title: '',
+        title: '[SCREEN 2,1 - OFF]',
+        // title: 'OFF',
         position: '9.473 7.0 -3.662',
         rotation: '0 -50 0',
       },
       {
-        // title: '[-2,0]',
-        title: '',
+        title: '[SCREEN -2,0 - OFF]',
+        // title: 'OFF',
         position: '-9.517 4.2 -3.579',
         rotation: '0 50 0',
       },
       {
-        // title: '[2,0]',
-        title: '',
+        title: '[SCREEN 2,0 - OFF]',
+        // title: 'OFF',
         position: '9.473 4.2 -3.662',
         rotation: '0 -50 0',
       },
       {
-        // title: '[-2,-1]',
-        title: '',
+        title: '[SCREEN -2,-1 - OFF]',
+        // title: 'OFF',
         position: '-9.517 1.6 -3.579',
         rotation: '-20 50 0',
       },
       {
-        // title: '[2,-1]',
-        title: '',
+        title: '[SCREEN 2,-1 - OFF]',
+        // title: 'OFF',
         position: '9.473 1.6 -3.662',
         rotation: '-20 -50 0',
       },
       {
-        // title: '[-2,2]',
-        title: '',
+        title: '[SCREEN -2,2 - OFF]',
+        // title: 'OFF',
         position: '-9.517 9.5 -3.579',
         rotation: '0 50 0',
       },
       {
-        // title: '[2,2]',
-        title: '',
+        title: '[SCREEN 2,2 - OFF]',
+        // title: 'OFF',
         position: '9.473 9.5 -3.662',
         rotation: '0 -50 0',
       },
       {
-        // title: '[-2,3]',
-        title: '',
+        title: '[SCREEN -2,3 - OFF]',
+        // title: 'OFF',
         position: '-9.517 12 -3.579',
         rotation: '10 50 -2',
       },
       {
-        // title: '[2,3]',
-        title: '',
+        title: '[SCREEN 2,3 - OFF]',
+        // title: 'OFF',
         position: '9.473 12 -3.662',
         rotation: '10 -50 2',
       },
     ],
   }),
-  components: {
-    Card,
-  },
   mounted() {
     this.debouncedPlayAudio = debounce(this.debouncedPlayAudio, 10);
     this.loadClusters();
@@ -205,7 +205,7 @@ export default {
                 this.debouncedPlayAudio();
               });
           }
-          this.clusters.splice(maxSize);
+          // this.clusters.splice(maxSize);
         });
     },
     debouncedPlayAudio() {
