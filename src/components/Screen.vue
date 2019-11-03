@@ -3,13 +3,11 @@
     v-if="title.length > 0"
     :position="position"
     :rotation="rotation"
-    shadow="receive: true"
   >
     <a-entity
       geometry="primitive: box; width: 5.25; depth: .1; height: 2.33"
       material="color: #0E0E0E; metalness:0.5; roughness: 0.8;"
       position="0 0 -.055"
-      shadow="receive: true"
       sound="
           src: url(/audio/tv_emf_static.mp3);
           autoplay: true;
@@ -27,10 +25,10 @@
       :position="textPositioning"
       :value="title"
       :wrap-count="wrapCount"
-      color="#1B03A3"
+      color="#FFF"
       baseline="top"
     />
-    <a-entity
+    <!--a-entity
       light="
         type: spot;
         angle: 100;
@@ -40,7 +38,7 @@
       "
       position="0 0 0.4"
       :rotation="lightRotation"
-    />
+    /-->
   </a-entity>
 </template>
 

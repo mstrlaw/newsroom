@@ -4,15 +4,7 @@ import App from './App';
 import router from './router';
 import store from './store';
 
-// aframe.registerComponent('listener', {
-//   tick() {
-//     console.log(this.el.getAttribute('position'));
-//   },
-// });
-
 Vue.config.productionTip = false;
-
-require('aframe-physics-system');
 
 Vue.config.ignoredElements = [
   'a-animation',
