@@ -1,34 +1,10 @@
-# newsroom
+# VR NEWSROOM
 
-## Project setup
-```
-npm install
-```
+A small demo app where the user can see the latest headlines for the current day, extracted from [https://thoro.news](https://thoro.news) clusters.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Future improvements:
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Interact with each cluster, i.e., expand it, see its sources, category;
+- Navigate back and forth in time;
+- Display current date the user is viewing;
+- Allow multiple users to join the same room (for chat purposes);
